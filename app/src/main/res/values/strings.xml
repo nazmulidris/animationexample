@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright 2017 Nazmul Idris. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+  <string name="app_name">Rocket Launch</string>
+  <string name="title_no_animation">No animation</string>
+  <string name="title_launch_rocket">Launch a rocket</string>
+  <string name="title_spin_rocket">Spin a rocket</string>
+  <string name="title_accelerate_rocket">Accelerate a rocket</string>
+  <string name="title_launch_rocket_objectanimator">Launch a rocket (ObjectAnimator)</string>
+  <string name="launch_spin">Launch and spin (AnimatorSet)</string>
+  <string name="launch_spin_viewpropertyanimator">Launch and spin (ViewPropertyAnimator)</string>
+  <string name="title_with_doge">Don\'t leave Doge behind (Animating two objects)</string>
+  <string name="title_animation_events">Animation events</string>
+  <string name="title_there_and_back">Fly there and back (Animation options)</string>
+  <string name="title_jump_and_blink">Jump and blink (Animations in XML)</string>
+  <string name="title_color_animation">Background color</string>
+</resources>
