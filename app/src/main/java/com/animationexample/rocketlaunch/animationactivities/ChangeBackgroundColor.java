@@ -19,7 +19,7 @@ package com.animationexample.rocketlaunch.animationactivities;
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.view.animation.AccelerateInterpolator;
 
 import com.animationexample.rocketlaunch.R;
 
@@ -42,14 +42,17 @@ public class ChangeBackgroundColor extends BaseAnimationActivity {
 
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
 
-        animator.setInterpolator(new FastOutSlowInInterpolator());
+        animator.setInterpolator(new AccelerateInterpolator(5f));
+
+        animator.setRepeatCount(1);
+        animator.setRepeatMode(ValueAnimator.REVERSE);
 
         animator.start();
     }
 
     @Override
     protected String getDisplayMessage() {
-        return "ObjectAnimator, backgroundColor";
+        return "ValueAnimator, ArgbEvaluator, AcclerateInterpolator, repeat";
     }
 
 }
