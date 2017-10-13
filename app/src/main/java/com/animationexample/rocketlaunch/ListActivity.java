@@ -26,7 +26,7 @@ import com.animationexample.rocketlaunch.animationactivities.FlyThereAndBackAnim
 import com.animationexample.rocketlaunch.animationactivities.FlyWithDogeAnimationActivity;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinAnimatorSetAnimatorActivity;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinViewPropertyAnimatorAnimationActivity;
-import com.animationexample.rocketlaunch.animationactivities.LaunchRocket;
+import com.animationexample.rocketlaunch.animationactivities.LaunchRocket1;
 import com.animationexample.rocketlaunch.animationactivities.LaunchRocket2;
 import com.animationexample.rocketlaunch.animationactivities.LaunchRocket3;
 import com.animationexample.rocketlaunch.animationactivities.NoAnimation;
@@ -56,8 +56,8 @@ public class ListActivity extends AppCompatActivity {
 
         items.add(
                 new RocketAnimationItem(
-                        getString(R.string.title_launch_rocket),
-                        new Intent(this, LaunchRocket.class)));
+                        getString(R.string.title_launch_rocket_1),
+                        new Intent(this, LaunchRocket1.class)));
 
         items.add(
                 new RocketAnimationItem(

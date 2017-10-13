@@ -19,7 +19,7 @@ package com.animationexample.rocketlaunch.animationactivities;
 import android.animation.ValueAnimator;
 import android.view.animation.LinearInterpolator;
 
-public class LaunchRocket extends BaseAnimationActivity {
+public class LaunchRocket1 extends BaseAnimationActivity {
 
     @Override
     protected void onStartAnimation() {

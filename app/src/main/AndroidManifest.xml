@@ -40,7 +40,7 @@
                 android:label="@string/app_name"/>
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket"
+                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket1"
                 android:label="@string/app_name"/>
 
         <activity

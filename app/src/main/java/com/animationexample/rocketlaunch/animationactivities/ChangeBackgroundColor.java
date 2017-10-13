@@ -16,11 +16,35 @@
 
 package com.animationexample.rocketlaunch.animationactivities;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ValueAnimator;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
+
+import com.animationexample.rocketlaunch.R;
+
 public class ChangeBackgroundColor extends BaseAnimationActivity {
 
     @Override
     protected void onStartAnimation() {
 
+        ValueAnimator animator =
+                ValueAnimator.ofObject(
+                        new ArgbEvaluator(),
+                        ContextCompat.getColor(this, R.color.background_from),
+                        ContextCompat.getColor(this, R.color.background_to));
+
+        animator.addUpdateListener(
+                valueAnimator -> {
+                    int color = (int) animator.getAnimatedValue();
+                    mFrameLayout.setBackgroundColor(color);
+                });
+
+        animator.setDuration(DEFAULT_ANIMATION_DURATION);
+
+        animator.setInterpolator(new FastOutSlowInInterpolator());
+
+        animator.start();
     }
 
     @Override

@@ -17,10 +17,10 @@
 <resources>
     <string name="app_name">Rocket Launch</string>
     <string name="title_no_animation">No animation</string>
-    <string name="title_launch_rocket">Launch a rocket (LinearInterpolation)</string>
+    <string name="title_launch_rocket_1">Launch a rocket 1 (LinearInterpolation)</string>
     <string name="title_spin_rocket">Rotate a rocket (FastOutSlowInInterpolator)</string>
-    <string name="title_launch_rocket_2">Launch a rocket (AccelerateInterpolator)</string>
-    <string name="title_launch_rocket_3">Launch a rocket (ObjectAnimator, AccelerateInterpolator)
+    <string name="title_launch_rocket_2">Launch a rocket 2 (AccelerateInterpolator)</string>
+    <string name="title_launch_rocket_3">Launch a rocket 3 (ObjectAnimator, AccelerateInterpolator)
     </string>
     <string name="launch_spin">Launch and spin (AnimatorSet)</string>
     <string name="launch_spin_viewpropertyanimator">Launch and spin (ViewPropertyAnimator)</string>

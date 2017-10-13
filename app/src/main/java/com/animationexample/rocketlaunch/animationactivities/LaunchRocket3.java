@@ -23,6 +23,13 @@ public class LaunchRocket3 extends BaseAnimationActivity {
 
     @Override
     protected void onStartAnimation() {
+
+        //        ValueAnimator animator = ValueAnimator.ofFloat(0, -mScreenHeight);
+        //        animator.addUpdateListener(valueAnimator -> {
+        //            float translatedY = (float) animator.getAnimatedValue();
+        //            mRocket.setTranslationY(translatedY);
+        //        });
+
         ObjectAnimator animator =
                 ObjectAnimator.ofFloat(mRocket, "translationY", 0, -mScreenHeight);
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
