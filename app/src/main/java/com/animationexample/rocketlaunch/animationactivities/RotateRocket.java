@@ -25,19 +25,18 @@ public class RotateRocket extends BaseAnimationActivity {
     protected void onStartAnimation() {
         ValueAnimator animator = ValueAnimator.ofFloat(0, 360);
 
-        animator.addUpdateListener(valueAnimator -> {
-            float rotationValue = (float) animator.getAnimatedValue();
-            mRocket.setRotation(rotationValue);
-        });
+        animator.addUpdateListener(
+                valueAnimator -> {
+                    float rotationValue = (float) animator.getAnimatedValue();
+                    mRocket.setRotation(rotationValue);
+                });
 
         animator.setInterpolator(new FastOutSlowInInterpolator());
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
         animator.start();
-
     }
 
-    protected String getDisplayMessage(){
+    protected String getDisplayMessage() {
         return "FastOutSlowInInterpolator";
     }
-
 }

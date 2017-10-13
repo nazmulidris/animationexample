@@ -18,8 +18,14 @@ package com.animationexample.rocketlaunch.animationactivities;
 
 public class ChangeBackgroundColor extends BaseAnimationActivity {
 
-  @Override
-  protected void onStartAnimation() {
+    @Override
+    protected void onStartAnimation() {
 
-  }
+    }
+
+    @Override
+    protected String getDisplayMessage() {
+        return "ObjectAnimator, backgroundColor";
+    }
+
 }

@@ -17,8 +17,6 @@
 package com.animationexample.rocketlaunch.animationactivities;
 
 public class FlyThereAndBackAnimationActivity extends BaseAnimationActivity {
-  @Override
-  protected void onStartAnimation() {
-
-  }
+    @Override
+    protected void onStartAnimation() {}
 }

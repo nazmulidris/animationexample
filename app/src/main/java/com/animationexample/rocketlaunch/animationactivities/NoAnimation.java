@@ -17,8 +17,8 @@
 package com.animationexample.rocketlaunch.animationactivities;
 
 public class NoAnimation extends BaseAnimationActivity {
-  @Override
-  protected void onStartAnimation() {
-    // Sorry, no animation here :]
-  }
+    @Override
+    protected void onStartAnimation() {
+        // Sorry, no animation here :]
+    }
 }

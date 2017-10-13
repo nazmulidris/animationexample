@@ -25,10 +25,11 @@ public class LaunchRocket2 extends BaseAnimationActivity {
     protected void onStartAnimation() {
         ValueAnimator animator = ValueAnimator.ofFloat(0, -mScreenHeight);
 
-        animator.addUpdateListener(valueAnimator -> {
-            float translateY = (float) animator.getAnimatedValue();
-            mRocket.setTranslationY(translateY);
-        });
+        animator.addUpdateListener(
+                valueAnimator -> {
+                    float translateY = (float) animator.getAnimatedValue();
+                    mRocket.setTranslationY(translateY);
+                });
 
         animator.setInterpolator(new AccelerateInterpolator(5f));
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
@@ -36,8 +37,7 @@ public class LaunchRocket2 extends BaseAnimationActivity {
         animator.start();
     }
 
-    protected String getDisplayMessage(){
+    protected String getDisplayMessage() {
         return "AccelerateInterpolator";
     }
-
 }

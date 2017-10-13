@@ -42,18 +42,21 @@ public abstract class BaseAnimationActivity extends AppCompatActivity {
         mDoge = findViewById(R.id.doge);
 
         mFrameLayout = findViewById(R.id.container);
-        mFrameLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(BaseAnimationActivity.this,
-                               getDisplayMessage(),
-                               Toast.LENGTH_SHORT).show();
-                onStartAnimation();
-            }
-        });
+        mFrameLayout.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(
+                                        BaseAnimationActivity.this,
+                                        getDisplayMessage(),
+                                        Toast.LENGTH_SHORT)
+                                .show();
+                        onStartAnimation();
+                    }
+                });
     }
 
-    protected String getDisplayMessage(){
+    protected String getDisplayMessage() {
         return "user click";
     }
 
