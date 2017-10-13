@@ -21,7 +21,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-import com.animationexample.rocketlaunch.animationactivities.ColorAnimationActivity;
+import com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor;
 import com.animationexample.rocketlaunch.animationactivities.FlyThereAndBackAnimationActivity;
 import com.animationexample.rocketlaunch.animationactivities.FlyWithDogeAnimationActivity;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinAnimatorSetAnimatorActivity;
@@ -77,7 +77,7 @@ public class ListActivity extends AppCompatActivity {
         items.add(
                 new RocketAnimationItem(
                         getString(R.string.title_color_animation),
-                        new Intent(this, ColorAnimationActivity.class)));
+                        new Intent(this, ChangeBackgroundColor.class)));
 
         items.add(
                 new RocketAnimationItem(

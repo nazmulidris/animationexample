@@ -56,7 +56,7 @@
         android:label="@string/app_name"/>
 
     <activity
-        android:name="com.animationexample.rocketlaunch.animationactivities.ColorAnimationActivity"
+        android:name="com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor"
         android:label="@string/app_name"/>
 
     <activity

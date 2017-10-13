@@ -16,7 +16,7 @@
 
 package com.animationexample.rocketlaunch.animationactivities;
 
-public class ColorAnimationActivity extends BaseAnimationActivity {
+public class ChangeBackgroundColor extends BaseAnimationActivity {
 
   @Override
   protected void onStartAnimation() {
