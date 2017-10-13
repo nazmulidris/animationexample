@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nazmul Idris. All rights reserved.
+ * Copyright 2017 Nazmul Idris.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,27 @@
 package com.animationexample.rocketlaunch.animationactivities;
 
 import android.animation.ValueAnimator;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.view.animation.LinearInterpolator;
 
-public class RotateRocketAnimationActivity extends BaseAnimationActivity {
+public class LaunchRocket extends BaseAnimationActivity {
 
     @Override
     protected void onStartAnimation() {
-        ValueAnimator animator = ValueAnimator.ofFloat(0, 360);
+        ValueAnimator animator = ValueAnimator.ofFloat(0, -mScreenHeight);
 
         animator.addUpdateListener(valueAnimator -> {
-            float rotationValue = (float) animator.getAnimatedValue();
-            mRocket.setRotation(rotationValue);
+            float yTranslation = (float) animator.getAnimatedValue();
+            mRocket.setTranslationY(yTranslation);
         });
 
-        animator.setInterpolator(new FastOutSlowInInterpolator());
+        animator.setInterpolator(new LinearInterpolator());
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
-        animator.start();
 
+        animator.start();
     }
 
     protected String getDisplayMessage(){
-        return "FastOutSlowInInterpolator";
+        return "LinearInterpolator";
     }
 
 }

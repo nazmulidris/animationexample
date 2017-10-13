@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nazmul Idris. All rights reserved.
+ * Copyright 2017 Nazmul Idris.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ package com.animationexample.rocketlaunch.animationactivities;
 import android.animation.ObjectAnimator;
 import android.view.animation.AccelerateInterpolator;
 
-public class LaunchRocketObjectAnimatorAnimationActivity extends BaseAnimationActivity {
+public class LaunchRocket3 extends BaseAnimationActivity {
 
     @Override
     protected void onStartAnimation() {

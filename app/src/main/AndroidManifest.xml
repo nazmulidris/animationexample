@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2017 Nazmul Idris. All rights reserved.
+  ~ Copyright 2017 Nazmul Idris.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -36,23 +36,23 @@
     </activity>
 
     <activity
-        android:name="com.animationexample.rocketlaunch.animationactivities.NoAnimationActivity"
+        android:name="com.animationexample.rocketlaunch.animationactivities.NoAnimation"
         android:label="@string/app_name"/>
 
     <activity
-        android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocketValueAnimatorAnimationActivity"
+        android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket"
         android:label="@string/app_name"/>
 
     <activity
-        android:name="com.animationexample.rocketlaunch.animationactivities.RotateRocketAnimationActivity"
+        android:name="com.animationexample.rocketlaunch.animationactivities.RotateRocket"
         android:label="@string/app_name"/>
 
     <activity
-        android:name="com.animationexample.rocketlaunch.animationactivities.AccelerateRocketAnimationActivity"
+        android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket2"
         android:label="@string/app_name"/>
 
     <activity
-        android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocketObjectAnimatorAnimationActivity"
+        android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket3"
         android:label="@string/app_name"/>
 
     <activity

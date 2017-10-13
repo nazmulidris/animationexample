@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nazmul Idris. All rights reserved.
+ * Copyright 2017 Nazmul Idris.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.animationexample.rocketlaunch.animationactivities;
 
-public class NoAnimationActivity extends BaseAnimationActivity {
+public class NoAnimation extends BaseAnimationActivity {
   @Override
   protected void onStartAnimation() {
     // Sorry, no animation here :]
