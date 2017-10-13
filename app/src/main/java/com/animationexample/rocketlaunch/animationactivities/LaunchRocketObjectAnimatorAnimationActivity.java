@@ -17,7 +17,7 @@
 package com.animationexample.rocketlaunch.animationactivities;
 
 import android.animation.ObjectAnimator;
-import android.view.animation.LinearInterpolator;
+import android.view.animation.AccelerateInterpolator;
 
 public class LaunchRocketObjectAnimatorAnimationActivity extends BaseAnimationActivity {
 
@@ -26,7 +26,7 @@ public class LaunchRocketObjectAnimatorAnimationActivity extends BaseAnimationAc
         ObjectAnimator animator =
                 ObjectAnimator.ofFloat(mRocket, "translationY", 0, -mScreenHeight);
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
-        animator.setInterpolator(new LinearInterpolator());
+        animator.setInterpolator(new AccelerateInterpolator(5f));
         animator.start();
     }
 
