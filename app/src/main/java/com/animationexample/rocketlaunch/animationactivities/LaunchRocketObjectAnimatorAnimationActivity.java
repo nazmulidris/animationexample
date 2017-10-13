@@ -16,9 +16,21 @@
 
 package com.animationexample.rocketlaunch.animationactivities;
 
-public class LaunchRocketObjectAnimatorAnimationActivity extends BaseAnimationActivity {
-  @Override
-  protected void onStartAnimation() {
+import android.animation.ObjectAnimator;
+import android.view.animation.LinearInterpolator;
 
-  }
+public class LaunchRocketObjectAnimatorAnimationActivity extends BaseAnimationActivity {
+
+    @Override
+    protected void onStartAnimation() {
+        ObjectAnimator animator =
+                ObjectAnimator.ofFloat(mRocket, "translationY", 0, -mScreenHeight);
+        animator.setDuration(DEFAULT_ANIMATION_DURATION);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.start();
+    }
+
+    protected String getDisplayMessage() {
+        return "ObjectAnimator";
+    }
 }
