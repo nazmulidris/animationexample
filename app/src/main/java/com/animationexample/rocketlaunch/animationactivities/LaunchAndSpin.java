@@ -20,7 +20,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 
-public class LaunchAndSpinRocket extends BaseAnimationActivity {
+public class LaunchAndSpin extends BaseAnimationActivity {
     @Override
     protected void onStartAnimation() {
 
@@ -50,4 +50,5 @@ public class LaunchAndSpinRocket extends BaseAnimationActivity {
     protected String getDisplayMessage() {
         return "AnimatorSet, and two ObjectAnimators";
     }
+
 }

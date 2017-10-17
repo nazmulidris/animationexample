@@ -16,7 +16,22 @@
 
 package com.animationexample.rocketlaunch.animationactivities;
 
-public class LaunchAndSpinViewPropertyAnimatorAnimationActivity extends BaseAnimationActivity {
+import android.view.animation.AccelerateInterpolator;
+
+public class LaunchAndSpinViewPropertyAnimator extends BaseAnimationActivity {
     @Override
-    protected void onStartAnimation() {}
+    protected void onStartAnimation() {
+        mRocket.animate()
+                .translationY(-mScreenHeight)
+                .rotationBy(360f)
+                .setDuration(DEFAULT_ANIMATION_DURATION)
+                .setInterpolator(new AccelerateInterpolator(5f))
+                .withEndAction(() -> {mRocket.setTranslationY(0);})
+                .start();
+    }
+
+    @Override
+    protected String getDisplayMessage() {
+        return "View.animate() ... ViewPropertyAnimator";
+    }
 }
