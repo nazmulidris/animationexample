@@ -43,4 +43,5 @@ public class LaunchAndSpinViewPropertyAnimator extends BaseAnimationActivity {
     protected String getDisplayMessage() {
         return "View.animate() ... ViewPropertyAnimator";
     }
+
 }

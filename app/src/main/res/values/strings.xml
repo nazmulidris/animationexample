@@ -25,7 +25,7 @@
     <string name="title_color_animation">Background color (object animator)</string>
     <string name="launch_spin_1">Launch and spin (AnimatorSet)</string>
     <string name="launch_spin_2">Launch and spin (ViewPropertyAnimator)</string>
-    <string name="title_with_doge">Don\'t leave Doge behind (Animating two objects)</string>
+    <string name="title_with_doge">Don\'t leave Doge behind (AnticipateInterpolator)</string>
     <string name="title_animation_events">Animation events</string>
     <string name="title_there_and_back">Fly there and back (Animation options)</string>
     <string name="title_jump_and_blink">Jump and blink (Animations in XML)</string>

@@ -23,7 +23,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor;
 import com.animationexample.rocketlaunch.animationactivities.FlyThereAndBackAnimationActivity;
-import com.animationexample.rocketlaunch.animationactivities.FlyWithDogeAnimationActivity;
+import com.animationexample.rocketlaunch.animationactivities.FlyDoge;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpin;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinViewPropertyAnimator;
 import com.animationexample.rocketlaunch.animationactivities.LaunchRocket1;
@@ -93,7 +93,7 @@ public class ListActivity extends AppCompatActivity {
         items.add(
                 new RocketAnimationItem(
                         getString(R.string.title_with_doge),
-                        new Intent(this, FlyWithDogeAnimationActivity.class)));
+                        new Intent(this, FlyDoge.class)));
 
         items.add(
                 new RocketAnimationItem(
