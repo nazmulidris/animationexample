@@ -17,6 +17,7 @@
 package com.animationexample.rocketlaunch;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,11 +29,14 @@ public class RocketAdapter extends RecyclerView.Adapter<RocketAdapter.RocketView
 
     private final List<RocketAnimationItem> mItems;
     private final Context mContext;
+    private final Typeface mCustomFont;
 
     public RocketAdapter(Context context, List<RocketAnimationItem> items) {
         super();
         mContext = context;
         mItems = items;
+        mCustomFont =
+                Typeface.createFromAsset(mContext.getAssets(), "fonts/Saira-Regular.ttf");
     }
 
     @Override
@@ -59,6 +63,7 @@ public class RocketAdapter extends RecyclerView.Adapter<RocketAdapter.RocketView
         public RocketViewHolder(android.view.View itemView) {
             super(itemView);
             mTitle = (TextView) itemView.findViewById(android.R.id.text1);
+            mTitle.setTypeface(mCustomFont);
             mTitle.setOnClickListener(
                     new View.OnClickListener() {
                         @Override
