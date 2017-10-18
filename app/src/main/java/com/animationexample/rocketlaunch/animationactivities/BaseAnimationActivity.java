@@ -43,16 +43,13 @@ public abstract class BaseAnimationActivity extends AppCompatActivity {
 
         mFrameLayout = findViewById(R.id.container);
         mFrameLayout.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(
-                                        BaseAnimationActivity.this,
-                                        getDisplayMessage(),
-                                        Toast.LENGTH_SHORT)
-                                .show();
-                        onStartAnimation();
-                    }
+                v -> {
+                    Toast.makeText(
+                                    BaseAnimationActivity.this,
+                                    getDisplayMessage(),
+                                    Toast.LENGTH_SHORT)
+                            .show();
+                    onStartAnimation();
                 });
     }
 
