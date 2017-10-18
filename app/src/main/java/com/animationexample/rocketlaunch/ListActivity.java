@@ -31,7 +31,7 @@ import com.animationexample.rocketlaunch.animationactivities.LaunchRocket2;
 import com.animationexample.rocketlaunch.animationactivities.LaunchRocket3;
 import com.animationexample.rocketlaunch.animationactivities.NoAnimation;
 import com.animationexample.rocketlaunch.animationactivities.RotateRocket;
-import com.animationexample.rocketlaunch.animationactivities.WithListenerAnimationActivity;
+import com.animationexample.rocketlaunch.animationactivities.AnimationListener;
 import com.animationexample.rocketlaunch.animationactivities.XmlAnimationActivity;
 
 import java.util.ArrayList;
@@ -97,8 +97,8 @@ public class ListActivity extends AppCompatActivity {
 
         items.add(
                 new RocketAnimationItem(
-                        getString(R.string.title_animation_events),
-                        new Intent(this, WithListenerAnimationActivity.class)));
+                        getString(R.string.title_animation_listeners),
+                        new Intent(this, AnimationListener.class)));
 
         items.add(
                 new RocketAnimationItem(

@@ -55,4 +55,5 @@ public class FlyDoge extends BaseAnimationActivity {
     protected String getDisplayMessage() {
         return "AnimatorSet, multiple objects, AnticipateInterpolator";
     }
+
 }
