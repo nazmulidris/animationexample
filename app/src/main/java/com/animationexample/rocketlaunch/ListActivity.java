@@ -22,7 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor;
-import com.animationexample.rocketlaunch.animationactivities.FlyThereAndBackAnimationActivity;
+import com.animationexample.rocketlaunch.animationactivities.AnimationOptions;
 import com.animationexample.rocketlaunch.animationactivities.FlyDoge;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpin;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinViewPropertyAnimator;
@@ -102,8 +102,8 @@ public class ListActivity extends AppCompatActivity {
 
         items.add(
                 new RocketAnimationItem(
-                        getString(R.string.title_there_and_back),
-                        new Intent(this, FlyThereAndBackAnimationActivity.class)));
+                        getString(R.string.title_animation_options),
+                        new Intent(this, AnimationOptions.class)));
 
         items.add(
                 new RocketAnimationItem(

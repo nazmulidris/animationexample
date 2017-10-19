@@ -76,7 +76,7 @@
                 android:label="@string/app_name"/>
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.FlyThereAndBackAnimationActivity"
+                android:name="com.animationexample.rocketlaunch.animationactivities.AnimationOptions"
                 android:label="@string/app_name"/>
 
         <activity
