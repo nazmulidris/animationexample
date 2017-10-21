@@ -36,6 +36,11 @@ public abstract class BaseAnimationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Hides the status bar.
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         setContentView(R.layout.activity_base_animation);
 
         mRocket = findViewById(R.id.rocket);

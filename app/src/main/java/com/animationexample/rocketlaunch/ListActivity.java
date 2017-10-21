@@ -16,13 +16,24 @@
 
 package com.animationexample.rocketlaunch;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.util.LruCache;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import android.view.View;
 
-import com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor;
+import com.animationexample.rocketlaunch.animationactivities.AnimationListener;
 import com.animationexample.rocketlaunch.animationactivities.AnimationOptions;
+import com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor;
 import com.animationexample.rocketlaunch.animationactivities.FlyDoge;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpin;
 import com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinViewPropertyAnimator;
@@ -31,7 +42,6 @@ import com.animationexample.rocketlaunch.animationactivities.LaunchRocket2;
 import com.animationexample.rocketlaunch.animationactivities.LaunchRocket3;
 import com.animationexample.rocketlaunch.animationactivities.NoAnimation;
 import com.animationexample.rocketlaunch.animationactivities.RotateRocket;
-import com.animationexample.rocketlaunch.animationactivities.AnimationListener;
 import com.animationexample.rocketlaunch.animationactivities.XmlAnimationActivity;
 
 import java.util.ArrayList;
@@ -43,6 +53,12 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Sets custom font on ActionBar title.
+        setupAppBar();
+
+        // Hides the status bar.
+        hideStatusBar();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
         recyclerView.setLayoutManager(new android.support.v7.widget.LinearLayoutManager(this));
@@ -81,19 +97,16 @@ public class ListActivity extends AppCompatActivity {
 
         items.add(
                 new RocketAnimationItem(
-                        getString(R.string.launch_spin_1),
-                        new Intent(this, LaunchAndSpin.class)));
+                        getString(R.string.launch_spin_1), new Intent(this, LaunchAndSpin.class)));
 
         items.add(
                 new RocketAnimationItem(
                         getString(R.string.launch_spin_2),
-                        new Intent(
-                                this, LaunchAndSpinViewPropertyAnimator.class)));
+                        new Intent(this, LaunchAndSpinViewPropertyAnimator.class)));
 
         items.add(
                 new RocketAnimationItem(
-                        getString(R.string.title_with_doge),
-                        new Intent(this, FlyDoge.class)));
+                        getString(R.string.title_with_doge), new Intent(this, FlyDoge.class)));
 
         items.add(
                 new RocketAnimationItem(
@@ -111,5 +124,61 @@ public class ListActivity extends AppCompatActivity {
                         new Intent(this, XmlAnimationActivity.class)));
 
         recyclerView.setAdapter(new RocketAdapter(this, items));
+    }
+
+    private void hideStatusBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    private void setupAppBar() {
+        Toolbar appBar = findViewById(R.id.appbar);
+        setSupportActionBar(appBar);
+        SpannableString spannableString = new SpannableString(getString(R.string.app_name));
+        spannableString.setSpan(
+                new TypefaceSpan(this, "Saira-Regular.ttf"),
+                0,
+                spannableString.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        getSupportActionBar().setTitle(spannableString);
+    }
+}
+
+class TypefaceSpan extends MetricAffectingSpan {
+    /** An <code>LruCache</code> for previously loaded typefaces. */
+    private static LruCache<String, Typeface> sTypefaceCache = new LruCache<String, Typeface>(12);
+
+    private Typeface mTypeface;
+
+    /** Load the {@link Typeface} and apply to a {@link Spannable}. */
+    public TypefaceSpan(Context context, String typefaceName) {
+        mTypeface = sTypefaceCache.get(typefaceName);
+
+        if (mTypeface == null) {
+            mTypeface =
+                    Typeface.createFromAsset(
+                            context.getApplicationContext().getAssets(),
+                            String.format("fonts/%s", typefaceName));
+
+            // Cache the loaded Typeface
+            sTypefaceCache.put(typefaceName, mTypeface);
+        }
+    }
+
+    @Override
+    public void updateMeasureState(TextPaint p) {
+        p.setTypeface(mTypeface);
+
+        // Note: This flag is required for proper typeface rendering
+        p.setFlags(p.getFlags() | Paint.SUBPIXEL_TEXT_FLAG);
+    }
+
+    @Override
+    public void updateDrawState(TextPaint tp) {
+        tp.setTypeface(mTypeface);
+
+        // Note: This flag is required for proper typeface rendering
+        tp.setFlags(tp.getFlags() | Paint.SUBPIXEL_TEXT_FLAG);
     }
 }
