@@ -29,7 +29,6 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
-import android.view.View;
 
 import com.animationexample.rocketlaunch.animationactivities.AnimationListener;
 import com.animationexample.rocketlaunch.animationactivities.AnimationOptions;
@@ -56,9 +55,6 @@ public class ListActivity extends AppCompatActivity {
 
         // Sets custom font on ActionBar title.
         setupAppBar();
-
-        // Hides the status bar.
-        hideStatusBar();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
         recyclerView.setLayoutManager(new android.support.v7.widget.LinearLayoutManager(this));
@@ -124,12 +120,6 @@ public class ListActivity extends AppCompatActivity {
                         new Intent(this, XmlAnimationActivity.class)));
 
         recyclerView.setAdapter(new RocketAdapter(this, items));
-    }
-
-    private void hideStatusBar() {
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
     }
 
     private void setupAppBar() {
