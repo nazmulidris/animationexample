@@ -27,6 +27,6 @@
     <string name="launch_spin_2">Launch and spin (ViewPropertyAnimator)</string>
     <string name="title_with_doge">Don\'t leave Doge behind (AnticipateInterpolator)</string>
     <string name="title_animation_listeners">Animation Listeners</string>
-    <string name="title_animation_options">Repeat, count, animation options</string>
-    <string name="title_jump_and_blink">Jump and blink (Animations in XML)</string>
+    <string name="title_animation_options">Animation options, set, repeat, count</string>
+    <string name="title_jump_and_blink">Animations in XML</string>
 </resources>

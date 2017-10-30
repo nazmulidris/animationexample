@@ -16,7 +16,31 @@
 
 package com.animationexample.rocketlaunch.animationactivities;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.support.graphics.drawable.AnimatorInflaterCompat;
+
+import com.animationexample.rocketlaunch.R;
+
 public class XmlAnimationActivity extends BaseAnimationActivity {
     @Override
-    protected void onStartAnimation() {}
+    protected void onStartAnimation() {
+        Animator rocketAnimatorSet =
+                AnimatorInflaterCompat.loadAnimator(this, R.animator.jump_and_blink);
+        rocketAnimatorSet.setTarget(mRocket);
+
+        Animator dogeAnimatorSet =
+                AnimatorInflaterCompat.loadAnimator(this, R.animator.jump_and_blink);
+        dogeAnimatorSet.setTarget(mDoge);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(rocketAnimatorSet, dogeAnimatorSet);
+        animatorSet.setDuration(DEFAULT_ANIMATION_DURATION);
+        animatorSet.start();
+    }
+
+    @Override
+    protected String getDisplayMessage() {
+        return "Using XML animations";
+    }
 }
