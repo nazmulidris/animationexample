@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nazmul Idris.
+ * Copyright 2017 Nazmul Idris. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,13 @@
 
 package com.animationexample.rocketlaunch;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.util.LruCache;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
 
 import com.animationexample.rocketlaunch.animationactivities.AnimationListener;
 import com.animationexample.rocketlaunch.animationactivities.AnimationOptions;
@@ -125,50 +119,23 @@ public class ListActivity extends AppCompatActivity {
     private void setupAppBar() {
         Toolbar appBar = findViewById(R.id.appbar);
         setSupportActionBar(appBar);
-        SpannableString spannableString = new SpannableString(getString(R.string.app_name));
-        spannableString.setSpan(
-                new TypefaceSpan(this, "Saira-Regular.ttf"),
-                0,
-                spannableString.length(),
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        getSupportActionBar().setTitle(spannableString);
-    }
-}
 
-class TypefaceSpan extends MetricAffectingSpan {
-    /** An <code>LruCache</code> for previously loaded typefaces. */
-    private static LruCache<String, Typeface> sTypefaceCache = new LruCache<String, Typeface>(12);
+        final String titleString = getString(R.string.app_name);
 
-    private Typeface mTypeface;
+        // WITHOUT FONT
+        getSupportActionBar().setTitle(titleString);
 
-    /** Load the {@link Typeface} and apply to a {@link Spannable}. */
-    public TypefaceSpan(Context context, String typefaceName) {
-        mTypeface = sTypefaceCache.get(typefaceName);
-
-        if (mTypeface == null) {
-            mTypeface =
-                    Typeface.createFromAsset(
-                            context.getApplicationContext().getAssets(),
-                            String.format("fonts/%s", typefaceName));
-
-            // Cache the loaded Typeface
-            sTypefaceCache.put(typefaceName, mTypeface);
-        }
-    }
-
-    @Override
-    public void updateMeasureState(TextPaint p) {
-        p.setTypeface(mTypeface);
-
-        // Note: This flag is required for proper typeface rendering
-        p.setFlags(p.getFlags() | Paint.SUBPIXEL_TEXT_FLAG);
-    }
-
-    @Override
-    public void updateDrawState(TextPaint tp) {
-        tp.setTypeface(mTypeface);
-
-        // Note: This flag is required for proper typeface rendering
-        tp.setFlags(tp.getFlags() | Paint.SUBPIXEL_TEXT_FLAG);
+        // WITH FONT
+        new FontDownloader(
+                this,
+                typeface -> {
+                    SpannableString spannableString = new SpannableString(titleString);
+                    spannableString.setSpan(
+                            new MyTypefaceSpan(this, typeface),
+                            0,
+                            spannableString.length(),
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    getSupportActionBar().setTitle(spannableString);
+                });
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nazmul Idris.
+ * Copyright 2017 Nazmul Idris. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,18 +21,13 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.raywenderlich.rocketlaunch"
+        applicationId "com.example.rocketlaunch"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -42,5 +37,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "com.android.support:support-compat:26.1.0"
     implementation 'com.android.support:design:26.1.0'
 }

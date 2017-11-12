@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2017 Nazmul Idris.
+  ~ Copyright 2017 Nazmul Idris. All rights reserved.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <string name="app_name">Rocket Launch</string>
+    <string name="app_name">Rocket Launch 🚀</string>
     <string name="title_no_animation">No animation</string>
     <string name="title_launch_rocket_1">Launch a rocket 1 (LinearInterpolation)</string>
     <string name="title_spin_rocket">Rotate a rocket (FastOutSlowInInterpolator)</string>
