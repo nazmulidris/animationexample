@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.animationexample.rocketlaunch;
+package com.animationexample.rocketlaunch.downloadablefonts;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -22,6 +22,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v4.provider.FontRequest;
 import android.support.v4.provider.FontsContractCompat;
+
+import com.animationexample.rocketlaunch.R;
 
 /** More info https://developers.google.com/fonts/docs/android */
 public class FontDownloader {
@@ -68,6 +70,7 @@ public class FontDownloader {
     }
 
     public interface DownloadTarget {
-        public void applyFont(Typeface typeface);
+
+        void applyFont(Typeface typeface);
     }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.animationexample.rocketlaunch;
+package com.animationexample.rocketlaunch.downloadablefonts;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -22,8 +22,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/** Created by nazmul on 11/11/17. */
-class MyTypefaceSpan extends MetricAffectingSpan {
+public class MyTypefaceSpan extends MetricAffectingSpan {
     private Typeface mTypeface;
 
     public MyTypefaceSpan(Context context, Typeface typeface) {

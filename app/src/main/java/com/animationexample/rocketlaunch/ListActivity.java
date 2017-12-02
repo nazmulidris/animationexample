@@ -17,6 +17,7 @@
 package com.animationexample.rocketlaunch;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -36,6 +37,8 @@ import com.animationexample.rocketlaunch.animationactivities.LaunchRocket3;
 import com.animationexample.rocketlaunch.animationactivities.NoAnimation;
 import com.animationexample.rocketlaunch.animationactivities.RotateRocket;
 import com.animationexample.rocketlaunch.animationactivities.XmlAnimationActivity;
+import com.animationexample.rocketlaunch.downloadablefonts.FontDownloader;
+import com.animationexample.rocketlaunch.downloadablefonts.MyTypefaceSpan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +53,7 @@ public class ListActivity extends AppCompatActivity {
         // Sets custom font on ActionBar title.
         setupAppBar();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        RecyclerView recyclerView = findViewById(R.id.list);
         recyclerView.setLayoutManager(new android.support.v7.widget.LinearLayoutManager(this));
 
         List<RocketAnimationItem> items = new ArrayList<>();
@@ -129,13 +132,20 @@ public class ListActivity extends AppCompatActivity {
         new FontDownloader(
                 this,
                 typeface -> {
-                    SpannableString spannableString = new SpannableString(titleString);
-                    spannableString.setSpan(
-                            new MyTypefaceSpan(this, typeface),
-                            0,
-                            spannableString.length(),
-                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    getSupportActionBar().setTitle(spannableString);
+                    setFormattedTitle(titleString, typeface);
                 });
+
+        // following line does not work (can't find font)
+        // setFormattedTitle(titleString, ResourcesCompat.getFont(this, R.font.poppins));
+    }
+
+    private void setFormattedTitle(String titleString, Typeface typeface) {
+        SpannableString spannableString = new SpannableString(titleString);
+        spannableString.setSpan(
+                new MyTypefaceSpan(this, typeface),
+                0,
+                spannableString.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        getSupportActionBar().setTitle(spannableString);
     }
 }
