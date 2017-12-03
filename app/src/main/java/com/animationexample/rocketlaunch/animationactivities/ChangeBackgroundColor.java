@@ -31,8 +31,8 @@ public class ChangeBackgroundColor extends BaseAnimationActivity {
         ValueAnimator animator =
                 ValueAnimator.ofObject(
                         new ArgbEvaluator(),
-                        ContextCompat.getColor(this, R.color.background_from),
-                        ContextCompat.getColor(this, R.color.background_to));
+                        ContextCompat.getColor(this, R.color.backgroundColor),
+                        ContextCompat.getColor(this, R.color.backgroundColorAlt));
 
         animator.addUpdateListener(
                 valueAnimator -> {
