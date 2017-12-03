@@ -24,31 +24,20 @@ public class LaunchAndSpin extends BaseAnimationActivity {
     @Override
     protected void onStartAnimation() {
 
-        ObjectAnimator positionAnimator = ObjectAnimator.ofFloat(
-                mRocket,
-                "translationY",
-                0,
-                -mScreenHeight
-        );
+        ObjectAnimator positionAnimator =
+                ObjectAnimator.ofFloat(mRocket, "translationY", 0, -mScreenHeight);
 
-        ObjectAnimator rotationAnimator = ObjectAnimator.ofFloat(
-                mRocket,
-                "rotation",
-                0f,
-                180f
-        );
+        ObjectAnimator rotationAnimator = ObjectAnimator.ofFloat(mRocket, "rotation", 0f, 180f);
 
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.play(positionAnimator).with(rotationAnimator);
         animatorSet.setDuration(DEFAULT_ANIMATION_DURATION);
         animatorSet.setInterpolator(new FastOutSlowInInterpolator());
         animatorSet.start();
-
     }
 
     @Override
     protected String getDisplayMessage() {
         return "AnimatorSet, and two ObjectAnimators";
     }
-
 }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2017 Nazmul Idris. All rights reserved.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,72 +15,72 @@
   -->
 
 <manifest package="com.animationexample.rocketlaunch"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:supportsRtl="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/MyTheme.NoActionBar">
 
         <activity
-                android:name="com.animationexample.rocketlaunch.ListActivity"
-                android:label="@string/app_name">
+            android:name="com.animationexample.rocketlaunch.ListActivity"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.NoAnimation"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.NoAnimation"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket1"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket1"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.RotateRocket"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.RotateRocket"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket2"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket2"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket3"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.LaunchRocket3"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.ChangeBackgroundColor"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchAndSpin"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.LaunchAndSpin"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinViewPropertyAnimator"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.LaunchAndSpinViewPropertyAnimator"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.FlyDoge"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.FlyDoge"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.AnimationListener"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.AnimationListener"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.AnimationOptions"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.AnimationOptions"
+            android:label="@string/app_name" />
 
         <activity
-                android:name="com.animationexample.rocketlaunch.animationactivities.XmlAnimationActivity"
-                android:label="@string/app_name"/>
+            android:name="com.animationexample.rocketlaunch.animationactivities.XmlAnimationActivity"
+            android:label="@string/app_name" />
 
         <meta-data
             android:name="preloaded_fonts"

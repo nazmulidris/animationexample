@@ -24,7 +24,7 @@ public class LaunchAndSpinViewPropertyAnimator extends BaseAnimationActivity {
     protected void onStartAnimation() {
         mRocket.animate()
                 .translationY(-mScreenHeight)
-                .rotationBy(360+180)
+                .rotationBy(360 + 180)
                 .setDuration(DEFAULT_ANIMATION_DURATION)
                 .setInterpolator(new AccelerateInterpolator(5f))
                 .withEndAction(
@@ -43,5 +43,4 @@ public class LaunchAndSpinViewPropertyAnimator extends BaseAnimationActivity {
     protected String getDisplayMessage() {
         return "View.animate() ... ViewPropertyAnimator";
     }
-
 }

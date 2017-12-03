@@ -54,5 +54,4 @@ public class ChangeBackgroundColor extends BaseAnimationActivity {
     protected String getDisplayMessage() {
         return "ValueAnimator, ArgbEvaluator, AcclerateInterpolator, repeat";
     }
-
 }

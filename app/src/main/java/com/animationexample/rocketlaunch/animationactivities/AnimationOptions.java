@@ -1,4 +1,4 @@
- /*
+/*
  * Copyright 2017 Nazmul Idris. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,17 +24,19 @@ public class AnimationOptions extends BaseAnimationActivity {
     @Override
     protected void onStartAnimation() {
         ValueAnimator verticalMovementAnimator = ValueAnimator.ofFloat(0, -mScreenHeight);
-        verticalMovementAnimator.addUpdateListener(animator -> {
-            float value = (float) animator.getAnimatedValue();
-            mRocket.setTranslationY(value);
-            mDoge.setTranslationY(value);
-        });
+        verticalMovementAnimator.addUpdateListener(
+                animator -> {
+                    float value = (float) animator.getAnimatedValue();
+                    mRocket.setTranslationY(value);
+                    mDoge.setTranslationY(value);
+                });
 
         ValueAnimator rotationAnimator = ValueAnimator.ofFloat(0, 360);
-        rotationAnimator.addUpdateListener(animator -> {
-            float value = (float) animator.getAnimatedValue();
-            mDoge.setRotation(value);
-        });
+        rotationAnimator.addUpdateListener(
+                animator -> {
+                    float value = (float) animator.getAnimatedValue();
+                    mDoge.setRotation(value);
+                });
 
         setupAnimationOptions(rotationAnimator);
         setupAnimationOptions(verticalMovementAnimator);
@@ -44,7 +46,7 @@ public class AnimationOptions extends BaseAnimationActivity {
         animatorSet.start();
     }
 
-    private void setupAnimationOptions(ValueAnimator animator){
+    private void setupAnimationOptions(ValueAnimator animator) {
         animator.setRepeatMode(ValueAnimator.REVERSE);
         animator.setRepeatCount(3); // this repeat count is a zero index value
         animator.setDuration(DEFAULT_ANIMATION_DURATION);
